@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>发卡公社 | 发卡站导航/发卡站大全/发卡网导航/发卡网大全/发卡网列表/发卡站列表</title>
+    <title>发卡导航 | 发卡站导航/发卡站大全/发卡网导航/发卡网大全/发卡网列表/发卡站列表</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.12/vue.js"></script>
@@ -75,13 +75,20 @@
                                  <a class="btn btn-outline-success"   target="_blank" v-bind:href="provider.whois"  rel="noopener">
                                     <i class="fas fa-globe-asia"></i>                                   
                                 </a>
-																						                                                            
-                                   <a class="btn btn-outline-success" target="_blank" v-bind:href="provider.pinlun" rel="noopener">
-                                                                   <i class="far fa-comment-alt"></i>
-                                </a>
-                              
-</div>  
-
+													
+                          </div>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="pt-4 border-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md">
+                    <small class="d-block mb-4 text-muted">本站收集自动发卡类型商店，仅供个人学习交流、测试使用<br>
+</div>
 <script>
     new Vue({
         el: '#root',
@@ -93,7 +100,7 @@
             },
             referrals: [
                 {
-                    name: "账号类",
+                    name: "国外账号",
                     providers: [
                         {
                             name: "派大星",
@@ -104,7 +111,20 @@
                             whois: "https://whois.gandi.net/fr/results?search=6993300.com#results",
                             kefu: "https://t.me/e_xuanyibot",
                         },
-                      ]
+                    ]
+
+			            },{
+                    name: "VPS服务器",
+                    providers: [ 
+   
+   
+   
+                    ]
+                        },
+                        
+                        
+                        
+                        
             ]
         }
     });
