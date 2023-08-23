@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>发卡公社 | 发卡站导航/发卡站大全/发卡网导航/发卡网大全/发卡网列表/发卡站列表</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.12/vue.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.0.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+	
+            <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"     crossorigin="anonymous">
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.0.0/css/bootstrap.min.css" rel="stylesheet"
+      crossorigin="anonymous">
+</head>
+<body>
+<div id="root">
+    <header>
+        <div class="py-3 mb-4 border-bottom">
+            <div class="container d-flex flex-wrap">
+                <a href="/" class="d-flex align-items-center mb-lg-0 me-lg-auto text-dark text-decoration-none">
+                       <img width="auto" height="40px" src="/png">
+                    
+                </a>
+
+               <ul class="nav me-auto">
+                   
+                </ul>
+                <ul class="nav">
+                   <li v-for="referral in referrals">
+                        <a v-bind:href="'#' + referral.name" class="nav-link link-dark px-2"
+                           v-bind:class="referral.name === referrals[0].name ? 'ps-0' : ''">
+                     {{ referral.name }}
+                        </a>
+                    </li>        <!--li > ___ </li>        <li >
+                        <a href="" target="_Blank" tyle="font-weight:bold;font-family:Microsoft JhengHei;"  class="nav-link link-dark px-2">
+                            免费入驻
+                        </a>
+                    </li-->
+                </ul>
+            </div>  
+        </div> 
+      
+    </header>
+    <main class="container pt-4 pb-4">
+        <div>
+            <p class="fs-5 col-md-8 pb-4 mt-4">        <a href="" target="_blank">     <img src="" width=100%>  </a>    <br><br>
+            
+             <br><a href="链接" target="_blank">测试！</a>  
+            <br> 本站只是导航！任何发卡网站 信誉不做保证！但收录的 都是老发卡网站
+            <br><br>本站收录各类发卡网。<br>{{ config.description }}</p>
+            <hr class="col-3 col-md-2 mt-4">
+     </div>
+<!--添加网站-->
+        <div class="row align-items-md-stretch pt-2">
+            <div class="col-md-12 pe-4">
+                <div v-for="referral in referrals">
+                    <h2 v-bind:id="referral.name" class="mt-4">{{ referral.name }}</h2>
+                    <div class="row g-4 py-4 row-cols-1 row-cols-lg-3">
+                        <div class="col d-flex align-items-start pt-2" v-for="provider in referral.providers">
+                            <div class="icon-square">
+                                <img width="36px" height="auto" class="me-4" v-bind:src="provider.image" rel="noreferrer"
+                                     v-bind:alt="provider.name">
+                            </div>
+                            <div>
+                                <h3>{{ provider.name }}</h3>
+                                <p>{{ provider.description }}</p>
+                                <a class="btn btn-primary" target="_blank" v-bind:href="provider.url" rel="noopener">
+                                    访问
+                                </a> 
+                              
+                                <a class="btn btn-outline-success" target="_blank" v-bind:href="provider.kefu" rel="noopener">
+                                    <i class="fas fa-users"></i>
+                                </a>
+                                                                																								
+                                 <a class="btn btn-outline-success"   target="_blank" v-bind:href="provider.whois"  rel="noopener">
+                                    <i class="fas fa-globe-asia"></i>                                   
+                                </a>
+																						                                                            
+                                   <a class="btn btn-outline-success" target="_blank" v-bind:href="provider.pinlun" rel="noopener">
+                                                                   <i class="far fa-comment-alt"></i>
+                                </a>
+                              
+</div>  
+
+<script>
+    new Vue({
+        el: '#root',
+        data: {
+            config: {
+                title: "发卡导航",
+                description: "你可以通过Ctrl+F来搜索你想要的商品。",
+                telegram: "链接",
+            },
+            referrals: [
+                {
+                    name: "账号类",
+                    providers: [
+                        {
+                            name: "派大星",
+                            image: "https://shop.6993300.top/uploads/images/006fb8f074afe3f5287178921bf72c1d57cfbb4b308f9c69c3ee2ad7b3500676.0.png",
+                            description: "苹果id,谷歌邮箱",
+                            pinlun: "pinlun.php?name=派大星",
+                            url: "https://shop.6993300.top",
+                            whois: "https://whois.gandi.net/fr/results?search=6993300.com#results",
+                            kefu: "https://t.me/e_xuanyibot",
+                        },
+                      ]
+        }
+    });
+</script>
+</body>
+</html>                      
+              
+              
